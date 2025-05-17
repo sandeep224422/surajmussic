@@ -6,7 +6,7 @@ from SONALI_MUSIC import app  #
 
 @app.on_message(filters.command("ask"))
 async def fetch_med_info(client, message):
-    YourQuery = " ".join(message.command[1:]) if len(message.command) > 1 else None  # YourQuery डिफाइन किया
+    YourQuery = " ".join(message.command[1:]) if len(message.command) > 1 else None  # YourQuery 
     if not YourQuery:
         await message.reply_text("**ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇʀʏ ᴛᴏ ᴀsᴋ.**")
         return
@@ -33,7 +33,7 @@ async def fetch_med_info(client, message):
 
 @app.on_message(filters.mentioned & filters.group)
 async def fetch_med_info_group(client, message):
-    YourQuery = message.text.replace(f"@{client.me.username}", "").strip()  # YourQuery डिफाइन किया
+    YourQuery = message.text.replace(f"@{client.me.username}", "").strip()  # YourQuery 
     if not YourQuery:
         await message.reply_text("**ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇʀʏ ᴛᴏ ᴀsᴋ.**")
         return
