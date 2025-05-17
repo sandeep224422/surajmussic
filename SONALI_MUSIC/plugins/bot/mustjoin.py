@@ -5,7 +5,7 @@ from SONALI_MUSIC import app
 
 #--------------------------
 
-MUST_JOIN = "KRITI_SUPPORT_CHAT"
+MUST_JOIN = "PURVI_SUPPORT"
 #------------------------
 @app.on_message(filters.incoming & filters.private, group=-1)
 async def must_join_channel(app: Client, msg: Message):
