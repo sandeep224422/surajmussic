@@ -2,7 +2,7 @@ import requests
 from pyrogram import Client, filters
 from pyrogram.enums import ChatAction
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from SONALI_MUSIC import app  # बॉट का एप्लिकेशन इंपोर्ट करें
+from SONALI_MUSIC import app  # 
 
 @app.on_message(filters.command("ask"))
 async def fetch_med_info(client, message):
@@ -26,7 +26,7 @@ async def fetch_med_info(client, message):
         reply = f"**ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ :** {e}"
     
     button = InlineKeyboardMarkup(
-        [[InlineKeyboardButton("ᴧηsᴡєʀ ʙʏ", url=f"https://t.me/Jio_savan_music_bot?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users")]]
+        [[InlineKeyboardButton("ᴧηsᴡєʀ ʙʏ", url=f"https://t.me/Sonali_music_bot?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users")]]
     )
     
     await message.reply_text(reply, reply_markup=button)
@@ -53,7 +53,7 @@ async def fetch_med_info_group(client, message):
         reply = f"**ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ :** {e}"
     
     button = InlineKeyboardMarkup(
-        [[InlineKeyboardButton("ᴧηsᴡєʀ ʙʏ", url=f"https://t.me/MeowxMusicRoBot?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users")]]
+        [[InlineKeyboardButton("ᴧηsᴡєʀ ʙʏ", url=f"https://t.me/Sonali_music_Bot?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users")]]
     )
     
     await message.reply_text(reply, reply_markup=button)
