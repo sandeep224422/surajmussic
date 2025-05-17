@@ -26,25 +26,14 @@ from config import BANNED_USERS
 from strings import get_string
 
 NEXIO = [
-    "https://files.catbox.moe/4q7c4w.jpg",
-    "https://files.catbox.moe/90z6sq.jpg",
-    "https://files.catbox.moe/rdfi4z.jpg",
-    "https://files.catbox.moe/6f9rgp.jpg",
-    "https://files.catbox.moe/99wj12.jpg",
-    "https://files.catbox.moe/ezpnd2.jpg",
-    "https://files.catbox.moe/e7q55f.jpg",
-    "https://files.catbox.moe/qyfsi7.jpg",
-    "https://files.catbox.moe/kbke7s.jpg",
-    "https://files.catbox.moe/7icvpu.jpg",
-    "https://files.catbox.moe/4hd77z.jpg",
-    "https://files.catbox.moe/yn7wje.jpg",
-    "https://files.catbox.moe/kifsir.jpg",
-    "https://files.catbox.moe/zi21kc.jpg",
-    "https://files.catbox.moe/z0gh23.jpg",
-    "https://files.catbox.moe/f2s4ws.jpg",
-    "https://files.catbox.moe/26nzoq.jpg",
-    "https://files.catbox.moe/fu6jk3.jpg",
-    "https://telegra.ph/file/d30d11c4365c025c25e3e.jpg",
+    "https://files.catbox.moe/m0a0dz.jpg",
+    "https://files.catbox.moe/5cp1u6.jpg",
+    "https://files.catbox.moe/rz00aq.jpg",
+    "https://files.catbox.moe/lldb7w.jpg",
+    "https://files.catbox.moe/k2zqfo.jpg",
+    "https://files.catbox.moe/sf5od2.jpg",
+    "https://files.catbox.moe/3q7csm.jpg",
+    "https://files.catbox.moe/32nivd.jpg",
 ]
 
 
