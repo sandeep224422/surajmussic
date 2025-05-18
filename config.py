@@ -19,6 +19,11 @@ LOGGER_ID = int(getenv("LOGGER_ID", -1002141133985))
 OWNER_ID = int(getenv("OWNER_ID", 8130531095))
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
+
+API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
+API_KEY = getenv("API_KEY", 'NxGBNexGenBotsad3e6e') # youtube song api key, get it from ht
+
+
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/HEERIYE143/TAMANNA_MUSIC",)
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
