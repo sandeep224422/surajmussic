@@ -52,6 +52,6 @@ pycryptodome
 opencv-python
 bing-image-urls
 bing_image_downloader
-git+https://github.com/TEAMPURVI/PurviAPI
+#git+https://github.com/TEAMPURVI/PurviAPI
 googlesearch-python
 sympy
