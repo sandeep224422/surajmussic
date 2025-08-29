@@ -2359,3 +2359,38 @@ class Fonts:
         for i, j in style.items():
             text = text.replace(i, j)
         return text
+        
+         def downside (text):
+        style = {
+            {
+                "a":"ɐ",
+                "b":"q",
+                "c":"ɔ",
+                "d":"p",
+                "e":"ǝ",
+                "f":"ɟ",
+                "g":"ƃ",
+                "h":"ɥ",
+                "i":"ᴉ",
+                "j":"ɾ",
+                "k":"ʞ",
+                "l":"ʃ",
+                "m":"ɯ",
+                "n":"u",
+                "o":"o",
+                "p":"d",
+                "q":"b",
+                "r":"ɹ",
+                "s":"s",
+                "t":"ʇ",
+                "u":"n",
+                "v":"ʌ",
+                "w":"ʍ",
+                "x":"x",
+                "y":"ʎ",
+                "z":"z",
+            }
+            
+        for i, j in style.items():
+            text = text.replace(i, j)
+        return text
