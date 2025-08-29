@@ -2394,3 +2394,40 @@ class Fonts:
         for i, j in style.items():
             text = text.replace(i, j)
         return text
+        
+        def tiny (text):
+        style = {
+         {
+             "a":"ᵃ",
+             "b":"ᵇ",
+             "c":"ᶜ",
+             "d":"ᵈ",
+             "e":"ᵉ",
+             "f":"ᶠ",
+             "g":"ᵍ",
+             "h":"ʰ",
+             "i":"ⁱ",
+             "j":"ʲ",
+             "k":"ᵏ",
+             "l":"ˡ",
+             "m":"ᵐ",
+             "n":"ⁿ",
+             "o":"ᵒ",
+             "p":"ᵖ",
+             "q":"ᑫ",
+             "r":"ʳ",
+             "s":"ˢ",
+             "t":"ᵗ",
+             "u":"ᵘ",
+             "v":"ᵛ",
+             "w":"ʷ",
+             "x":"ˣ",
+             "y":"ʸ",
+             "z":"ᶻ",
+         
+         }
+            
+        for i, j in style.items():
+            text = text.replace(i, j)
+        return text
+
