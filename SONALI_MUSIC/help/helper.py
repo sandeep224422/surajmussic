@@ -1,4 +1,4 @@
-# MADE BY - ALPHA BABY
+# MADE BY - ALPHA BABY moded By Devil Boss
 
 class Helper(object):
     HELP_M = '''```
@@ -46,7 +46,7 @@ class Helper(object):
 **❖ sᴇɴᴅ ᴡʜɪsᴘᴇʀ ᴍᴇssᴀɢᴇ ❖**
 
 ```
- єxᴧϻᴘʟє : @TAMANNA_MUSIC_BOT @l_HEART_BEAT_l I love You 😘
+ єxᴧϻᴘʟє : @DiorMusicBot @Ankitgupta214 I love You 😘
 ```
 
 <u>**❖ ᴛєxᴛ ᴛσ ᴠσɪᴄє**</u>
@@ -73,7 +73,7 @@ class Helper(object):
 
 ❍ /font [ᴛєxᴛ]**
 ```
-❖ єxᴧϻᴘʟє : /font badnam Baby```
+❖ єxᴧϻᴘʟє : /font Devil Baby```
 '''
 
     HELP_06 = '''```
@@ -101,7 +101,7 @@ class Helper(object):
 **❍ /couples ➠ ᴜsє ᴛʜɪs ᴄσϻϻᴧηᴅ ᴧηᴅ sєє ɢʀσᴜᴘs ᴄσᴜᴘʟєs.
 ❍ /wish ➠ ᴜsє ᴛʜɪs ᴄσϻϻᴧηᴅ ᴧηᴅ sєє ɢʀσᴜᴘs ᴄσᴜᴘʟєs.
 ❍ /cute ➠ ᴄʜєᴄᴋ ʏσυʀ ᴄυᴛєηєss.
-❍ /love ➠ ᴧᴅᴅ ᴛᴡᴏ ηᴧϻєs ᴧηᴅ sєє ʟσᴠᴇ ᴘσssɪʙɪʟɪᴛʏ !! `ʟɪᴋᴇ ʀᴧᴊᴧ + sσηᴧ.`
+❍ /love ➠ ᴧᴅᴅ ᴛᴡᴏ ηᴧϻєs ᴧηᴅ sєє ʟσᴠᴇ ᴘσssɪʙɪʟɪᴛʏ !! `ʟɪᴋᴇ DEVIL + AY***I.`
 ㅤ**
 '''
 
@@ -122,7 +122,7 @@ class Helper(object):
 ❖ sᴛɪᴄᴋєʀs ᴄσϻϻᴧηᴅꜱ ❖```
 **❍ /packkang ➠ ᴄʀєᴧᴛєs ᴧ ᴘᴧᴄᴋ σғ sᴛɪᴄᴋєʀs ғʀσϻ ᴧ σᴛʜєʀ ᴘᴧᴄᴋ
 ❍ /stickerid ➠ ɢєᴛs ᴛʜє sᴛɪᴄᴋєʀ ɪᴅ σғ ᴧ sᴛɪᴄᴋєʀ
-❍ /mmf ➠ ʀєᴘʟʏ ᴧηʏ ᴘɪᴄ & ɢɪᴠє ᴛєxᴛ `єx :- /mmf badnam`
+❍ /mmf ➠ ʀєᴘʟʏ ᴧηʏ ᴘɪᴄ & ɢɪᴠє ᴛєxᴛ `єx :- /mmf devil`
 ❍ /kang ➠ ʀєᴘʟʏ ᴧηʏ sᴛɪᴄᴋєʀ & ᴄʀєᴀᴛє ʏσᴜʀ sᴛɪᴄᴋєʀ ᴘᴧᴄᴋ
 ❍ /st ➠ ғɪηᴅ ᴏʀɪɢɪηᴧʟ sᴛɪᴄᴋєʀ.**
 '''
@@ -319,7 +319,7 @@ class Helper(object):
 **❍ /git ➠ ғɪηᴅ ʀєᴘᴏ ɢɪᴛ ᴜsєʀηᴧϻє
 ❍ /allrepo ➠ sєє ᴧʟʟ ʀєᴘᴏ ᴛʜʀσᴜɢʜ ɢɪᴛ ᴜsєʀηᴧϻє**
 
-`єxᴧϻᴘʟє : /git TEAMKRITI`
+`єxᴧϻᴘʟє : /git DEVILBOTS`
 '''
 
     HELP_26 = '''```
@@ -346,24 +346,25 @@ class Helper(object):
 ─────────────────────────
 ʙєsᴛ ᴧηᴅ ᴄʜєᴧᴘ ɪη ᴛєʟєɢʀᴧϻ 400-500+ ϻєϻʙєʀs ɪη σηє ᴘʀσϻσᴛɪση ɢυʀᴧηᴛєє...
 ─────────────────────────
-❍ ᴄσηᴛᴧᴄᴛ - [𝚻꯭ᴀᴍᴀᴎᴎᴀ ꭙ 𝚳꯭ᴜᴤᴉᴒ](https://t.me/l_HEART_BEAT_l)
+❍ ᴄσηᴛᴧᴄᴛ - [ᴅɪᴏʀ](https://t.me/Ankitgupta214)
 ─────────────────────────**
 '''
     HELP_ABOUT = '''
 **─────────────────────────
-│ ᴡєʟᴄσϻє ᴛσ [𝚻꯭ᴀᴍᴀᴎᴎᴀ ꭙ 𝚳꯭ᴜᴤᴉᴒ](https://t.me/TAMANNA_MUSIC_BOT)˼ ʙσᴛ sᴛᴧᴛυs │
+│ ᴡєʟᴄσϻє ᴛσ [ᴅɪᴏʀ](https://t.me/DiorMusicBot)˼ ʙσᴛ sᴛᴧᴛυs │
 ─────────────────────────
        ❖ │ ʀєᴧʟ ᴛɪϻє ʙσᴛ's sᴛᴧᴛυs │❖
 ─────────────────────────
-╭⎋ [𝚻꯭ᴀᴍᴀᴎᴎᴀ ꭙ 𝚳꯭ᴜᴤᴉᴒ](https://t.me/TAMANNA_MUSIC_BOT) : ᴧʟɪᴠє 
+╭⎋ [ᴅɪᴏʀ](https://t.me/DiorMusicBot) : ᴧʟɪᴠє 
 ╰⊚ υᴘᴛɪϻє : 12ʜ:58ϻ:20s | ᴄᴘυ : 5.0% | 
        υsᴧɢє : 24 | ᴧssɪsᴛᴧηᴛs : 01    
 ─────────────────────────
-⊚ ʙσᴛ sᴛᴧᴛυs ᴧηᴅ ϻσʀє ʙσᴛs - [ᴄʟɪᴄᴋ ʜєʀє](https://t.me/UFC_UPDATES)
+⊚ ʙσᴛ sᴛᴧᴛυs ᴧηᴅ ϻσʀє ʙσᴛs - [ᴄʟɪᴄᴋ ʜєʀє](https://t.me/BotsGrill)
 ─────────────────────────
 ⊚ ʟᴧsᴛ ᴄʜєᴄᴋєᴅ ση : ᴅᴧᴛє : 19 oct 2024
 ─────────────────────────
-❍ 𝐏ᴏᴡєʀєᴅ 𝖡ʏ » [ᯓ🩺᪵‌‌˟‌ 𝆺𝅥⃝‌🫀꯭‌𝗛꯭𝆬𝆬‌𝜩‌𝚫‌𝗥꯭𝆬‌𝗧‌𝗕꯭‌𝜩‌𝚫‌𝗧꯭‌𝅹𝅹ﮩ᪵‌٨ـﮩ➛](https://t.me/l_HEART_BEAT_l)
+❍ 𝐏ᴏᴡєʀєᴅ 𝖡ʏ » [𝐊ᴀʀᴛɪᴋ 𝐁ᴀʙʏ](https://t.me/GonnaAgree)
+❍ 𝐃єᴧʟᴏᴘєʀ.  » [𝐃𝐞𝐯𝐢𝐥 𝐁𝐨𝐬𝐬](https://t.me/Ankitgupta214)
 ─────────────────────────**
 '''
     HELP_ALLBOT = '''
@@ -378,9 +379,9 @@ class Helper(object):
 ● ᴇηᴊᴏʏ ғєєʟ ғʀєє ϻᴜsɪᴄ ᴡɪᴛʜ 𝐊ʀɪᴛɪ.
 ● ᴧᴅᴅ ϻє ηᴏᴡ ʙᴧʙʏ ɪɴ ʏᴏᴜʀ ɢʀσᴜᴘs.
 ─────────────────────────
-❖ υᴘᴅᴧᴛєs ᴄʜᴧηηєʟ ➥ [𝚻꯭ᴀᴍᴀᴎᴎᴀ ꭙ 𝚳꯭ᴜᴤᴉᴒ](https://t.me/UFC_UPDATES)
-❖ sυᴘᴘσʀᴛ ᴄʜᴧᴛ ➥ [𝚻꯭ᴀᴍᴀᴎᴎᴀ-ᴜᴘᴅᴧᴛєs](https://t.me/ll_P_U_L_lI)
-❖ ʀєᴘσ ʟɪηᴋ ➥ [ᴄʟɪᴄᴋ-ʜєʀє](https://t.me/TAMANNA_MUSIC_BOT?start=_tgr_fBSoVjdmODhl)
+❖ υᴘᴅᴧᴛєs ᴄʜᴧηηєʟ ➥ [ᴅɪᴏʀ-ᴜᴘᴅᴧᴛєs](https://t.me/BotsGrill)
+❖ sυᴘᴘσʀᴛ ᴄʜᴧᴛ ➥ [ᴅɪᴏʀ](https://t.me/BotsGrill)
+❖ ʀєᴘσ ʟɪηᴋ ➥ [ᴄʟɪᴄᴋ-ʜєʀє](https://t.me/Ankitgupta214)
 ─────────────────────────
 ❖ ᴄʟɪᴄᴋ ση ᴛʜє ʜєʟᴩ ʙυᴛᴛση ᴛσ ɢєᴛ ɪηғσ
    ᴧʙσυᴛ ϻʏ ϻσᴅυʟєs ᴧηᴅ ᴄσϻϻᴧηᴅs...!!
