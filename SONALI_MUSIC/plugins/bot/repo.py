@@ -7,13 +7,13 @@ import httpx
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 start_txt = """**
-<u>❃ ᴡєʟᴄσϻє ᴛᴏ ᴘᴜʀᴠɪ ʀєᴘσs ❃</u>
+<u>❃ 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚁𝙴𝙿𝙾𝚂 𝚂𝙴𝙲𝚃𝙸𝙾𝙽 ❃</u>
  
 ✼ ʀєᴘᴏ ᴛᴏ ηʜɪ ϻɪʟєɢᴧ ʏʜᴧ
  
 ❉ ᴘᴧʜʟє ᴘᴧᴘᴧ ʙσʟ ʀєᴘᴏ ᴏᴡηєʀ ᴋᴏ 
 
-✼ || [ᴧʟᴘʜᴧ-ʙᴧʙʏ](https://t.me/PURVI_SUPPORT) ||
+✼ || [Dᴇᴠɪʟ](https://t.me/KomalMusicUpdates) ||
  
 ❊ ʀᴜη 24x7 ʟᴧɢ ϝʀєє ᴡɪᴛʜσᴜᴛ sᴛσᴘ**
 """
@@ -28,18 +28,18 @@ async def start(_, msg):
           InlineKeyboardButton("✙ ᴧᴅᴅ ϻє вᴧʙʏ ✙", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
         ],
         [
-          InlineKeyboardButton("• ʜєʟᴘ •", url="https://t.me/PURVI_UPDATES"),
-          InlineKeyboardButton("• 𝛅ᴜᴘᴘσʀᴛ •", url="https://t.me/PURVI_SUPPORT"),
+          InlineKeyboardButton("• ʜєʟᴘ •", url="https://t.me/KomalMusicUpdates"),
+          InlineKeyboardButton("• 𝛅ᴜᴘᴘσʀᴛ •", url="https://t.me/KomalMusicUpdates"),
           ],
 [
-InlineKeyboardButton("• ϻᴧɪη ʙσᴛ •", url=f"https://t.me/Sonali_music_bot"),
+InlineKeyboardButton("• ϻᴧɪη ʙσᴛ •", url=f"https://t.me/Komal_music_bot"),
 
         ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
     await msg.reply_photo(
-        photo="https://files.catbox.moe/kbi6t5.jpg",
+        photo="https://files.catbox.moe/mhia7u.jpg",
         caption=start_txt,
         reply_markup=reply_markup
     )
