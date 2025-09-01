@@ -24,7 +24,7 @@ API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
 API_KEY = getenv("API_KEY", 'NxGBNexGenBotsad3e6e') # youtube song api key, get it from ht
 
 
-UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/HEERIYE143/TAMANNA_MUSIC",)
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/Ankit656kp/Sonali-",)
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 PRIVACY_LINK = getenv("PRIVACY_LINK", "https://telegra.ph/Komal-Bots-Privacy-policy-08-29-2")
