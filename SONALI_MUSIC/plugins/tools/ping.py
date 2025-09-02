@@ -49,9 +49,9 @@ async def ping_com(client, message: Message, _):
     await asyncio.sleep(2)
     await response.edit_caption("**ᴘɪηɢɪηɢ ᴏᴜʀ sєʀᴠєʀ ᴡᴧɪᴛ.....**")
     await asyncio.sleep(2)
-    await response.edit_caption("**sʏsᴛєϻ ᴅᴧᴛᴧ ᴧηᴧʟʏsєᴅ sᴜᴄᴄєssғᴜʟʟʏ !**")
+    await response.edit_caption("**ᴅɪᴏʀ sʏsᴛєϻ ᴅᴧᴛᴧ ᴧηᴧʟʏsєᴅ sᴜᴄᴄєssғᴜʟʟʏ !**")
     await asyncio.sleep(3)
-    await response.edit_caption("**sєηᴅɪηɢ sʏsᴛєϻ ᴧηᴧʟʏsєᴅ ᴅᴧᴛᴧ ᴘʟєᴧsє ᴡᴧɪᴛ...**")
+    await response.edit_caption("**ᴅɪᴏʀ sʏsᴛєϻ ᴧηᴧʟʏsєᴅ ᴅᴧᴛᴧ ᴘʟєᴧsє ᴡᴧɪᴛ...**")
     start = datetime.now()
     pytgping = await Sona.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
@@ -71,15 +71,15 @@ async def ping_com(client, message: Message, _):
         ],
         [
             InlineKeyboardButton(
-                text="• ɢʀᴏᴜᴘ •", url=f"https://t.me/",
+                text="• ʜᴇʟᴘ •", url=f"https://t.me/BotsGrill",
             ),
             InlineKeyboardButton(
-                text="• ᴍᴏʀᴇ •", url=f"https://t.me/PURVI_UPDATES",
+                text="• ᴍᴏʀᴇ •", url=f"https://t.me/ZeeMusicUpdate",
             )
         ],
         [
             InlineKeyboardButton(
-                text="• ʜᴇʟᴘ •", url=f"https://t.me/{app.username}?start=help"
+                text="• ᴅɪᴏʀ •", url=f"https://t.me/{app.username}?start=help"
             )
         ],
     ]
