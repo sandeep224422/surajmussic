@@ -49,9 +49,9 @@ async def ping_com(client, message: Message, _):
     await asyncio.sleep(2)
     await response.edit_caption("**ᴘɪηɢɪηɢ ᴏᴜʀ sєʀᴠєʀ ᴡᴧɪᴛ.....**")
     await asyncio.sleep(2)
-    await response.edit_caption("**ᴅɪᴏʀ sʏsᴛєϻ ᴅᴧᴛᴧ ᴧηᴧʟʏsєᴅ sᴜᴄᴄєssғᴜʟʟʏ !**")
+    await response.edit_caption("**𝐁𝐑𝐀𝐇𝐈𝐗 sʏsᴛєϻ ᴅᴧᴛᴧ ᴧηᴧʟʏsєᴅ sᴜᴄᴄєssғᴜʟʟʏ !**")
     await asyncio.sleep(3)
-    await response.edit_caption("**ᴅɪᴏʀ sʏsᴛєϻ ᴧηᴧʟʏsєᴅ ᴅᴧᴛᴧ ᴘʟєᴧsє ᴡᴧɪᴛ...**")
+    await response.edit_caption("**𝐁𝐑𝐀𝐇𝐈𝐗 sʏsᴛєϻ ᴧηᴧʟʏsєᴅ ᴅᴧᴛᴧ ᴘʟєᴧsє ᴡᴧɪᴛ...**")
     start = datetime.now()
     pytgping = await Sona.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
@@ -79,7 +79,7 @@ async def ping_com(client, message: Message, _):
         ],
         [
             InlineKeyboardButton(
-                text="• ᴅɪᴏʀ •", url=f"https://t.me/{app.username}?start=help"
+                text="• 𝐁𝐑𝐀𝐇𝐈𝐗 •", url=f"https://t.me/{app.username}?start=help"
             )
         ],
     ]

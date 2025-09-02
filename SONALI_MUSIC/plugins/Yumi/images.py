@@ -33,12 +33,12 @@ async def google_img_search(client: Client, message: Message):
     except Exception as e:
         return await message.reply(f"❍ ᴇʀʀᴏʀ ɪɴ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ɪᴍᴀɢᴇs: {e}")
 
-    msg = await message.reply("❍ ᴅɪᴏʀ ғɪɴᴅɪɴɢ ɪᴍᴀɢᴇs.....")
+    msg = await message.reply("❍ 𝐁𝐑𝐀𝐇𝐈𝐗 ғɪɴᴅɪɴɢ ɪᴍᴀɢᴇs.....")
 
     count = 0
     for img in lst:
         count += 1
-        await msg.edit(f"❍ ᴅɪᴏʀ ғɪɴᴅ {count} ɪᴍᴀɢᴇs.....")
+        await msg.edit(f"❍ 𝐁𝐑𝐀𝐇𝐈𝐗 ғɪɴᴅ {count} ɪᴍᴀɢᴇs.....")
 
     try:
         await app.send_media_group(
