@@ -9,13 +9,13 @@ API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
 
 BOT_TOKEN = getenv("BOT_TOKEN")
-OWNER_USERNAME = getenv("OWNER_USERNAME","Ankitguta214")
-BOT_USERNAME = getenv("BOT_USERNAME" , "DiorMusicBot")
-BOT_NAME = getenv("BOT_NAME" , "ᴅɪσʀ ꭙ мᴜsɪᴄ")
-ASSUSERNAME = getenv("ASSUSERNAME" , "ANKIT")
+OWNER_USERNAME = getenv("OWNER_USERNAME","brahix")
+BOT_USERNAME = getenv("BOT_USERNAME" , "raddhika_robot")
+BOT_NAME = getenv("BOT_NAME" , "radhika ꭙ мᴜsɪᴄ")
+ASSUSERNAME = getenv("ASSUSERNAME" , "suraj")
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
-LOGGER_ID = int(getenv("LOGGER_ID", -1002788908420))
+LOGGER_ID = int(getenv("LOGGER_ID", -1002561713988))
 OWNER_ID = int(getenv("OWNER_ID", 6135117014))
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
@@ -23,13 +23,15 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
 API_KEY = getenv("API_KEY", 'NxGBNexGenBotsad3e6e') # youtube song api key, get it from ht
 
+NEW_API_URL = getenv("NEW_API_URL", "https://apikeyy-zeta.vercel.app/api") #fallback api url
+
 
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/Ankit656kp/Sonali-",)
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 PRIVACY_LINK = getenv("PRIVACY_LINK", "https://telegra.ph/Komal-Bots-Privacy-policy-08-29-2")
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/BotsGrill")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/KomalMusicUpdate")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/brahix_support")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/about_brahix")
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False")
 AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "9000"))
 SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "9999999"))

@@ -73,7 +73,7 @@ INFO_TEXT = """
 ❍ ᴅᴄ ɪᴅ ▷ {}
 ❍ ʙɪᴏ ▷ {}
 
-❖ ᴍᴀᴅᴇ ʙʏ  ➛ [Komal-ʙᴏᴛs](https://t.me/KomalMusicUpdates)
+❖ ᴍᴀᴅᴇ ʙʏ  ➛ [ мᴜsɪᴄ](https://t.me/about_brahixs)
 ▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭
 
 """

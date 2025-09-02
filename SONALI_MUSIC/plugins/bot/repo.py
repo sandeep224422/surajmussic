@@ -13,7 +13,7 @@ start_txt = """**
  
 ❉ ᴘᴧʜʟє ᴘᴧᴘᴧ ʙσʟ ʀєᴘᴏ ᴏᴡηєʀ ᴋᴏ 
 
-✼ || [Dᴇᴠɪʟ](https://t.me/KomalMusicUpdates) ||
+✼ || [Dᴇᴠɪʟ](https://t.me/about_brahixs) ||
  
 ❊ ʀᴜη 24x7 ʟᴧɢ ϝʀєє ᴡɪᴛʜσᴜᴛ sᴛσᴘ**
 """
@@ -28,8 +28,8 @@ async def start(_, msg):
           InlineKeyboardButton("✙ ᴧᴅᴅ ϻє вᴧʙʏ ✙", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
         ],
         [
-          InlineKeyboardButton("• ʜєʟᴘ •", url="https://t.me/KomalMusicUpdates"),
-          InlineKeyboardButton("• 𝛅ᴜᴘᴘσʀᴛ •", url="https://t.me/KomalMusicUpdates"),
+          InlineKeyboardButton("• ʜєʟᴘ •", url="https://t.me/about_brahixs"),
+          InlineKeyboardButton("• 𝛅ᴜᴘᴘσʀᴛ •", url="https://t.me/about_brahixs"),
           ],
 [
 InlineKeyboardButton("• ϻᴧɪη ʙσᴛ •", url=f"https://t.me/Komal_music_bot"),

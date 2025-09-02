@@ -16,7 +16,7 @@ import random
 import logging
 import aiohttp
 import config
-from config import API_URL, API_KEY
+from config import API_URL, API_KEY, NEW_API_URL
 
 
 def cookie_txt_file():
@@ -36,56 +36,86 @@ async def download_song(link: str):
         if os.path.exists(file_path):
             #print(f"File already exists: {file_path}")
             return file_path
-        
-    song_url = f"{API_URL}/song/{video_id}?api={API_KEY}"
+    
+    # Try new API first
+    new_song_url = f"{NEW_API_URL}/song/{video_id}"
     async with aiohttp.ClientSession() as session:
-        while True:
-            try:
-                async with session.get(song_url) as response:
-                    if response.status != 200:
-                        raise Exception(f"API request failed with status code {response.status}")
+        try:
+            # Try new API first
+            async with session.get(new_song_url) as response:
+                if response.status == 200:
+                    data = await response.json()
+                    download_url = data.get("link") or data.get("url")
+                    if download_url:
+                        # Download from new API
+                        return await download_file(session, download_url, video_id, data)
+                else:
+                    print(f"New API failed with status: {response.status}")
+        except Exception as e:
+            print(f"New API failed: {e}")
+        
+        # Fallback to main API
+        print("New API failed, trying main API...")
+        try:
+            song_url = f"{API_URL}/song/{video_id}?api={API_KEY}"
+            async with session.get(song_url) as response:
+                if response.status == 200:
                     data = await response.json()
                     status = data.get("status", "").lower()
-                    if status == "downloading":
-                        await asyncio.sleep(2)
-                        continue
-                    elif status == "error":
-                        error_msg = data.get("error") or data.get("message") or "Unknown error"
-                        raise Exception(f"API error: {error_msg}")
-                    elif status == "done":
+                    if status == "done":
                         download_url = data.get("link")
-                        if not download_url:
-                            raise Exception("API response did not provide a download URL.")
-                        break
-                    else:
-                        raise Exception(f"Unexpected status '{status}' from API.")
-            except Exception as e:
-                print(f"Error while checking API status: {e}")
-                return None
-
-        try:
-            file_format = data.get("format", "mp3")
-            file_extension = file_format.lower()
-            file_name = f"{video_id}.{file_extension}"
-            download_folder = "downloads"
-            os.makedirs(download_folder, exist_ok=True)
-            file_path = os.path.join(download_folder, file_name)
-
-            async with session.get(download_url) as file_response:
-                with open(file_path, 'wb') as f:
-                    while True:
-                        chunk = await file_response.content.read(8192)
-                        if not chunk:
-                            break
-                        f.write(chunk)
-                return file_path
-        except aiohttp.ClientError as e:
-            print(f"Network or client error occurred while downloading: {e}")
-            return None
+                        if download_url:
+                            # Download from main API
+                            return await download_file(session, download_url, video_id, data)
+                    elif status == "downloading":
+                        # Wait for download to complete
+                        while True:
+                            await asyncio.sleep(2)
+                            async with session.get(song_url) as status_response:
+                                if status_response.status == 200:
+                                    status_data = await status_response.json()
+                                    status = status_data.get("status", "").lower()
+                                    if status == "done":
+                                        download_url = status_data.get("link")
+                                        if download_url:
+                                            return await download_file(session, download_url, video_id, status_data)
+                                        break
+                                    elif status == "error":
+                                        break
+                else:
+                    print(f"Main API failed with status: {response.status}")
         except Exception as e:
-            print(f"Error occurred while downloading song: {e}")
-            return None
-    return None
+            print(f"Main API failed: {e}")
+        
+        # If both APIs fail, return None
+        print("Both APIs failed, falling back to cookies method")
+        return None
+
+
+async def download_file(session, download_url, video_id, data):
+    """Helper function to download file from URL"""
+    try:
+        file_format = data.get("format", "mp3")
+        file_extension = file_format.lower()
+        file_name = f"{video_id}.{file_extension}"
+        download_folder = "downloads"
+        os.makedirs(download_folder, exist_ok=True)
+        file_path = os.path.join(download_folder, file_name)
+
+        async with session.get(download_url) as file_response:
+            with open(file_path, 'wb') as f:
+                while True:
+                    chunk = await file_response.content.read(8192)
+                    if not chunk:
+                        break
+                    f.write(chunk)
+        return file_path
+    except aiohttp.ClientError as e:
+        print(f"Network or client error occurred while downloading: {e}")
+        return None
+    except Exception as e:
+        print(f"Error occurred while downloading song: {e}")
+        return None
 
 async def check_file_size(link):
     async def get_format_info(link):
@@ -427,17 +457,34 @@ class YouTubeAPI:
             x.download([link])
 
         if songvideo:
-            await download_song(link)
+            downloaded_file = await download_song(link)
+            if downloaded_file:
+                return downloaded_file
+            # Fallback to cookies method if APIs fail
             fpath = f"downloads/{link}.mp3"
             return fpath
         elif songaudio:
-            await download_song(link)
+            downloaded_file = await download_song(link)
+            if downloaded_file:
+                return downloaded_file
+            # Fallback to cookies method if APIs fail
             fpath = f"downloads/{link}.mp3"
             return fpath
         elif video:
             if await is_on_off(1):
                 direct = True
                 downloaded_file = await download_song(link)
+                if not downloaded_file:
+                    # Fallback to cookies method if APIs fail
+                    file_size = await check_file_size(link)
+                    if not file_size:
+                        print("None file Size")
+                        return
+                    total_size_mb = file_size / (1024 * 1024)
+                    if total_size_mb > 250:
+                        print(f"File size {total_size_mb:.2f} MB exceeds the 100MB limit.")
+                        return None
+                    downloaded_file = await loop.run_in_executor(None, video_dl)
             else:
                 proc = await asyncio.create_subprocess_exec(
                     "yt-dlp",
@@ -467,4 +514,7 @@ class YouTubeAPI:
         else:
             direct = True
             downloaded_file = await download_song(link)
+            if not downloaded_file:
+                # Fallback to cookies method if APIs fail
+                downloaded_file = await loop.run_in_executor(None, audio_dl)
         return downloaded_file, direct

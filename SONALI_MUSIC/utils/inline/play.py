@@ -64,7 +64,7 @@ def stream_markup_timer(_, chat_id, played, dur):
          InlineKeyboardButton(text=_["S_B_3"], url=f"https://t.me/{app.username}?startgroup=true",)
         ],
         [
-         InlineKeyboardButton(text="• ᴜᴘᴅᴀᴛᴇ •", url="https://t.me/BotsGrill"),
+         InlineKeyboardButton(text="• ᴜᴘᴅᴀᴛᴇ •", url="https://t.me/brahix_support"),
          InlineKeyboardButton(text="• ɢʀᴏᴜᴘ •", url="https://t.me/ZeeMusicUpdate"),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
@@ -75,7 +75,7 @@ def stream_markup_timer(_, chat_id, played, dur):
 def stream_markup(_, chat_id):
     buttons = [
         [
-         InlineKeyboardButton(text="• ᴜᴘᴅᴀᴛᴇ •", url="https://t.me/BotsGrill"),
+         InlineKeyboardButton(text="• ᴜᴘᴅᴀᴛᴇ •", url="https://t.me/brahix_support"),
          InlineKeyboardButton(text="• ɢʀᴏᴜᴘ •", url="https://t.me/ZeeMusicupdate "),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
