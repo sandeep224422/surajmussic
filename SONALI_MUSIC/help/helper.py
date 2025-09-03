@@ -319,7 +319,7 @@ class Helper(object):
 **❍ /git ➠ ғɪηᴅ ʀєᴘᴏ ɢɪᴛ ᴜsєʀηᴧϻє
 ❍ /allrepo ➠ sєє ᴧʟʟ ʀєᴘᴏ ᴛʜʀσᴜɢʜ ɢɪᴛ ᴜsєʀηᴧϻє**
 
-`єxᴧϻᴘʟє : /git DEVILBOTS`
+`єxᴧϻᴘʟє : /git BRAHIXBOTS`
 '''
 
     HELP_26 = '''```
@@ -364,7 +364,7 @@ class Helper(object):
 ⊚ ʟᴧsᴛ ᴄʜєᴄᴋєᴅ ση : ᴅᴧᴛє : 19 oct 2024
 ─────────────────────────
 ❍ 𝐏ᴏᴡєʀєᴅ 𝖡ʏ » [𝐁𝐑𝐀𝐇𝐈𝐗](https://t.me/about_brahix)
-❍ 𝐃єᴧʟᴏᴘєʀ.  » [𝐃𝐞𝐯𝐢𝐥 𝐁𝐨𝐬](https://t.me/Brahix)
+❍ 𝐃єᴧʟᴏᴘєʀ.  » [[𝐁𝐑𝐀𝐇𝐈𝐗](https://t.me/Brahix)
 ─────────────────────────**
 '''
     HELP_ALLBOT = '''
