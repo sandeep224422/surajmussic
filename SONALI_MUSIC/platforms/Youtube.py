@@ -2,6 +2,7 @@ import asyncio
 import os
 import re
 import json
+import random
 from typing import Union
 import requests
 import yt_dlp
@@ -11,13 +12,18 @@ from youtubesearchpython.__future__ import VideosSearch
 from SONALI_MUSIC.utils.database import is_on_off
 from SONALI_MUSIC.utils.formatters import time_to_seconds
 import aiohttp
-import config
-from config import NEW_API_URL  # Only this is used now
+
+# API URL directly in code
+NEW_API_URL = "https://apikeyy-zeta.vercel.app/api"
 
 
 def cookie_txt_file():
     cookie_dir = f"{os.getcwd()}/cookies"
+    if not os.path.exists(cookie_dir):
+        return None
     cookies_files = [f for f in os.listdir(cookie_dir) if f.endswith(".txt")]
+    if not cookies_files:
+        return None
     return os.path.join(cookie_dir, random.choice(cookies_files))
 
 
@@ -25,6 +31,7 @@ async def download_song(link: str):
     video_id = link.split('v=')[-1].split('&')[0]
     download_folder = "downloads"
 
+    # Check if file already exists
     for ext in ["mp3", "m4a", "webm"]:
         file_path = f"{download_folder}/{video_id}.{ext}"
         if os.path.exists(file_path):
@@ -39,13 +46,14 @@ async def download_song(link: str):
                     data = await response.json()
                     download_url = data.get("link") or data.get("url")
                     if download_url:
+                        print(f"Downloading from API: {download_url}")
                         return await download_file(session, download_url, video_id, data)
                 else:
                     print(f"NEW_API failed with status: {response.status}")
         except Exception as e:
             print(f"NEW_API exception: {e}")
 
-    print("Both API methods failed, falling back to yt-dlp cookies method")
+    print("API method failed, falling back to yt-dlp cookies method")
     return None
 
 
@@ -58,13 +66,14 @@ async def download_file(session, download_url, video_id, data):
         os.makedirs(download_folder, exist_ok=True)
         file_path = os.path.join(download_folder, file_name)
 
-        async with session.get(download_url) as file_response:
+        async with session.get(download_url) as response:
             with open(file_path, 'wb') as f:
                 while True:
-                    chunk = await file_response.content.read(8192)
+                    chunk = await response.content.read(8192)
                     if not chunk:
                         break
                     f.write(chunk)
+        print(f"Successfully downloaded: {file_path}")
         return file_path
     except Exception as e:
         print(f"Download error: {e}")
@@ -72,9 +81,14 @@ async def download_file(session, download_url, video_id, data):
 
 
 async def check_file_size(link):
+    cookie_file = cookie_txt_file()
+    if not cookie_file:
+        print("No cookie file found")
+        return None
+        
     async def get_format_info(link):
         proc = await asyncio.create_subprocess_exec(
-            "yt-dlp", "--cookies", cookie_txt_file(), "-J", link,
+            "yt-dlp", "--cookies", cookie_file, "-J", link,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE
         )
@@ -159,13 +173,18 @@ class YouTubeAPI:
         loop = asyncio.get_running_loop()
 
         def audio_dl():
+            cookie_file = cookie_txt_file()
+            if not cookie_file:
+                print("No cookie file found for fallback download")
+                return None
+                
             opts = {
                 "format": "bestaudio/best",
                 "outtmpl": "downloads/%(id)s.%(ext)s",
                 "geo_bypass": True,
                 "nocheckcertificate": True,
                 "quiet": True,
-                "cookiefile": cookie_txt_file(),
+                "cookiefile": cookie_file,
                 "no_warnings": True,
             }
             x = yt_dlp.YoutubeDL(opts)
@@ -177,13 +196,18 @@ class YouTubeAPI:
             return filepath
 
         def video_dl():
+            cookie_file = cookie_txt_file()
+            if not cookie_file:
+                print("No cookie file found for fallback download")
+                return None
+                
             opts = {
-                "format": "(bestvideo[height<=?720][ext=mp4])+bestaudio[ext=m4a]",
+                "format": "(bestvideo[height<=?720][ext=mp4])+bestvideo[height<=?720][ext=mp4]",
                 "outtmpl": "downloads/%(id)s.%(ext)s",
                 "geo_bypass": True,
                 "nocheckcertificate": True,
                 "quiet": True,
-                "cookiefile": cookie_txt_file(),
+                "cookiefile": cookie_file,
                 "no_warnings": True,
             }
             x = yt_dlp.YoutubeDL(opts)
@@ -198,6 +222,7 @@ class YouTubeAPI:
             downloaded_file = await download_song(link)
             if downloaded_file:
                 return downloaded_file
+            print("API download failed, trying yt-dlp fallback...")
             return await loop.run_in_executor(None, audio_dl)
 
         elif video:
@@ -210,8 +235,13 @@ class YouTubeAPI:
                     return None
                 return await loop.run_in_executor(None, video_dl)
             else:
+                cookie_file = cookie_txt_file()
+                if not cookie_file:
+                    print("No cookie file found")
+                    return None
+                    
                 proc = await asyncio.create_subprocess_exec(
-                    "yt-dlp", "--cookies", cookie_txt_file(), "-g", "-f", "best[height<=?720][width<=?1280]",
+                    "yt-dlp", "--cookies", cookie_file, "-g", "-f", "best[height<=?720][width<=?1280]",
                     link, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
                 )
                 stdout, stderr = await proc.communicate()
@@ -223,4 +253,39 @@ class YouTubeAPI:
             downloaded_file = await download_song(link)
             if downloaded_file:
                 return downloaded_file
+            print("API download failed, trying yt-dlp fallback...")
             return await loop.run_in_executor(None, audio_dl)
+
+
+# Example usage function
+async def main():
+    # Example YouTube URL
+    youtube_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    
+    # Create API instance
+    api = YouTubeAPI()
+    
+    # Check if URL exists
+    if await api.exists(youtube_url):
+        print("URL is valid")
+        
+        # Get video details
+        title, duration_min, duration_sec, thumbnail, vidid = await api.details(youtube_url)
+        print(f"Title: {title}")
+        print(f"Duration: {duration_min}")
+        print(f"Thumbnail: {thumbnail}")
+        print(f"Video ID: {vidid}")
+        
+        # Download audio
+        print("Downloading audio...")
+        result = await api.download(youtube_url, None, songaudio=True)
+        if result:
+            print(f"Download successful: {result}")
+        else:
+            print("Download failed")
+    else:
+        print("Invalid YouTube URL")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
