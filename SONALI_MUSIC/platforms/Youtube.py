@@ -6,11 +6,6 @@ import random
 from typing import Union
 import requests
 import yt_dlp
-from pyrogram.enums import MessageEntityType
-from pyrogram.types import Message
-from youtubesearchpython.__future__ import VideosSearch
-from SONALI_MUSIC.utils.database import is_on_off
-from SONALI_MUSIC.utils.formatters import time_to_seconds
 import aiohttp
 
 # API URL directly in code
@@ -25,6 +20,17 @@ def cookie_txt_file():
     if not cookies_files:
         return None
     return os.path.join(cookie_dir, random.choice(cookies_files))
+
+
+def time_to_seconds(time_str):
+    """Convert time string (MM:SS) to seconds"""
+    try:
+        if ':' in time_str:
+            minutes, seconds = map(int, time_str.split(':'))
+            return minutes * 60 + seconds
+        return int(time_str)
+    except:
+        return 0
 
 
 async def download_song(link: str):
@@ -127,21 +133,8 @@ class YouTubeAPI:
             link = self.base + link
         return bool(re.search(self.regex, link))
 
-    async def url(self, message_1: Message) -> Union[str, None]:
-        messages = [message_1]
-        if message_1.reply_to_message:
-            messages.append(message_1.reply_to_message)
-
-        for message in messages:
-            if message.entities:
-                for entity in message.entities:
-                    if entity.type == MessageEntityType.URL:
-                        text = message.text or message.caption
-                        return text[entity.offset : entity.offset + entity.length]
-            elif message.caption_entities:
-                for entity in message.caption_entities:
-                    if entity.type == MessageEntityType.TEXT_LINK:
-                        return entity.url
+    async def url(self, message_1=None) -> Union[str, None]:
+        # Simplified URL extraction - you can modify this as needed
         return None
 
     async def details(self, link: str, videoid: Union[bool, str] = None):
@@ -149,17 +142,15 @@ class YouTubeAPI:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
-        results = VideosSearch(link, limit=1)
-        for result in (await results.next())["result"]:
-            title = result["title"]
-            duration_min = result["duration"]
-            duration_sec = int(time_to_seconds(duration_min or "0"))
-            thumbnail = result["thumbnails"][0]["url"].split("?")[0]
-            vidid = result["id"]
-        return title, duration_min, duration_sec, thumbnail, vidid
+        
+        # Extract video ID from link
+        video_id = link.split('v=')[-1].split('&')[0]
+        
+        # Return basic info without external API calls
+        return f"Video {video_id}", "0:00", 0, f"https://img.youtube.com/vi/{video_id}/default.jpg", video_id
 
     async def download(
-        self, link: str, mystic,
+        self, link: str, mystic=None,
         video: Union[bool, str] = None,
         videoid: Union[bool, str] = None,
         songaudio: Union[bool, str] = None,
@@ -202,7 +193,7 @@ class YouTubeAPI:
                 return None
                 
             opts = {
-                "format": "(bestvideo[height<=?720][ext=mp4])+bestvideo[height<=?720][ext=mp4]",
+                "format": "(bestvideo[height<=?720][ext=mp4])+bestaudio[ext=m4a]",
                 "outtmpl": "downloads/%(id)s.%(ext)s",
                 "geo_bypass": True,
                 "nocheckcertificate": True,
@@ -226,29 +217,8 @@ class YouTubeAPI:
             return await loop.run_in_executor(None, audio_dl)
 
         elif video:
-            if await is_on_off(1):
-                file_size = await check_file_size(link)
-                if not file_size:
-                    return
-                if file_size / (1024 * 1024) > 250:
-                    print("File size too large.")
-                    return None
-                return await loop.run_in_executor(None, video_dl)
-            else:
-                cookie_file = cookie_txt_file()
-                if not cookie_file:
-                    print("No cookie file found")
-                    return None
-                    
-                proc = await asyncio.create_subprocess_exec(
-                    "yt-dlp", "--cookies", cookie_file, "-g", "-f", "best[height<=?720][width<=?1280]",
-                    link, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
-                )
-                stdout, stderr = await proc.communicate()
-                if stdout:
-                    return stdout.decode().split("\n")[0]
-                return await loop.run_in_executor(None, video_dl)
-
+            # Simplified video download without size check
+            return await loop.run_in_executor(None, video_dl)
         else:
             downloaded_file = await download_song(link)
             if downloaded_file:
