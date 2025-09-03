@@ -26,7 +26,7 @@ API_KEY = getenv("API_KEY", 'NxGBNexGenBotsad3e6e') # youtube song api key, get 
 NEW_API_URL = getenv("NEW_API_URL", "https://apikeyy-zeta.vercel.app/api") #fallback api url
 
 
-UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/sandeep224422/sonamusic",)
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/sandeep224422/surajmussic",)
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 PRIVACY_LINK = getenv("PRIVACY_LINK", "https://telegra.ph/Komal-Bots-Privacy-policy-08-29-2")
