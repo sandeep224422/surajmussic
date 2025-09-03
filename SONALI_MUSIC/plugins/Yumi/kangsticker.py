@@ -144,7 +144,7 @@ async def kang(client, message: Message):
                 stickerset = await create_sticker_set(
                     client,
                     message.from_user.id,
-                    f"{message.from_user.first_name[:32]}'s ᴘᴀᴄᴋ ʙʏ @Sonali_Music_bot",
+                    f"{message.from_user.first_name[:32]}'s ᴘᴀᴄᴋ ʙʏ @Saregamaa_Music_bot",
                     packname,
                     [sticker],
                 )
@@ -175,7 +175,7 @@ async def kang(client, message: Message):
         )
     except (PeerIdInvalid, UserIsBlocked):
         keyboard = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="⌯ sᴛᴀʀᴛ ɪɴ ᴘᴍ ⌯", url=f"t.me/{BOT_USERNAME}")]]
+            [[InlineKeyboardButton(text="⌯ sᴛᴀʀᴛ ɪɴ ᴘᴍ ⌯", url=f"https://t.me/{BOT_USERNAME}")]]
         )
         await msg.edit(
             "✦ ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ sᴛᴀʀᴛ ᴀ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ ᴡɪᴛʜ ᴍᴇ.",
