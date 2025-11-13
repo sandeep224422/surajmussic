@@ -5,8 +5,14 @@ import socket
 from datetime import datetime
 
 import urllib3
-from git import Repo
-from git.exc import GitCommandError, InvalidGitRepositoryError
+try:
+    from git import Repo
+    from git.exc import GitCommandError, InvalidGitRepositoryError
+    _GIT_IMPORT_ERROR = None
+except ImportError as exc:
+    Repo = None  # type: ignore[assignment]
+    GitCommandError = InvalidGitRepositoryError = Exception  # type: ignore[assignment]
+    _GIT_IMPORT_ERROR = exc
 from pyrogram import filters
 
 import config
@@ -43,6 +49,15 @@ async def update_(client, message, _):
         if HAPP is None:
             return await message.reply_text(_["server_2"])
     response = await message.reply_text(_["server_3"])
+    if Repo is None:
+        warn_text = (
+            _["server_git_missing"]
+            if "server_git_missing" in _
+            else "Git client unavailable on this deployment. Update skipped."
+        )
+        if _GIT_IMPORT_ERROR:
+            warn_text += f"\n\n{_GIT_IMPORT_ERROR}"
+        return await response.edit(warn_text)
     try:
         repo = Repo()
     except GitCommandError:
